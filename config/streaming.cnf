@@ -63,29 +63,6 @@ streaming.client.publish.mode=asynchronous</value>
           </record>
         </array>
       </record>
-      <record javaclass="com.wm.data.ISMemDataImpl">
-        <value name="name">OrderAnalytics_OrderAnalytics</value>
-        <value name="description">EEM</value>
-        <value name="package">OrderAnalytics</value>
-        <value name="type">Kafka</value>
-        <value name="host">https://eem-gw-ibm-egw-rt-1-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443</value>
-        <value name="clientId">ISf14c62efb7</value>
-        <value name="other_properties">security.protocol=SASL_SSL
-sasl.mechanism=PLAIN 
-sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="eem-c7e0537d-9779-4c61-894b-d389fc97e14b" password="[*****]" ;</value>
-        <value name="other_runtime_properties">security.protocol=SASL_SSL
-streaming.consumer.validate.consumers.not.greater.than.partitions=true
-sasl.mechanism=PLAIN 
-sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="eem-c7e0537d-9779-4c61-894b-d389fc97e14b" password="[*****]" ;
-streaming.client.publish.mode=asynchronous</value>
-        <value name="enabled">true</value>
-        <value name="securityProtocol">SASL_SSL</value>
-        <value name="truststoreAlias">EEMOpenShift</value>
-        <value name="keystoreAlias"></value>
-        <null name="keystoreKeyAlias"/>
-        <array name="subjects" type="record" depth="1">
-        </array>
-      </record>
     </array>
   </record>
 </IDataXMLCoder>
