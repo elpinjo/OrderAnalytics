@@ -8,19 +8,79 @@
         <value name="description">Order analytics connection</value>
         <value name="package">OrderAnalytics</value>
         <value name="type">Kafka</value>
-        <value name="host">es-small-kafka-bootstrap-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443</value>
+        <value name="host">eem-gw-ibm-egw-rt-1-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443</value>
         <value name="clientId">IS8876d259fc</value>
-        <value name="other_properties">security.protocol=SASL_SSL 
-sasl.mechanism=SCRAM-SHA-512 
-sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="webmethods-edge-misja" password="[*****]" ;</value>
-        <value name="other_runtime_properties">security.protocol=SASL_SSL 
+        <value name="other_properties">security.protocol=SASL_SSL
+ssl.protocol=TLSv1.3
+sasl.mechanism=PLAIN
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="eem-a0e0dbc4-fce5-499b-97f6-6b51a77e97d0" password="[*****]" ;
+bootstrap.servers=eem-gw-ibm-egw-rt-1-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443
+ssl.endpoint.identification.algorithm=HTTPS</value>
+        <value name="other_runtime_properties">ssl.protocol=TLSv1.3
+bootstrap.servers=eem-gw-ibm-egw-rt-1-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443
+security.protocol=SASL_SSL
 streaming.consumer.validate.consumers.not.greater.than.partitions=true
-sasl.mechanism=SCRAM-SHA-512 
-sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="webmethods-edge-misja" password="[*****]" ;
+sasl.mechanism=PLAIN
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="eem-a0e0dbc4-fce5-499b-97f6-6b51a77e97d0" password="[*****]" ;
+ssl.endpoint.identification.algorithm=HTTPS
 streaming.client.publish.mode=asynchronous</value>
         <value name="enabled">true</value>
         <value name="securityProtocol">SASL_SSL</value>
-        <value name="truststoreAlias">EStruststore</value>
+        <value name="truststoreAlias">EEMOpenShift</value>
+        <value name="keystoreAlias"></value>
+        <null name="keystoreKeyAlias"/>
+        <array name="subjects" type="record" depth="1">
+          <record javaclass="com.wm.data.ISMemDataImpl">
+            <value name="referenceId">Orders</value>
+            <value name="topicName">ORDERS.NEW</value>
+            <record name="keyCoder" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="type">STRING</value>
+              <value name="type_display">String</value>
+              <record name="parameters" javaclass="com.wm.data.ISMemDataImpl">
+                <array name="nameValue" type="record" depth="1">
+                  <record javaclass="com.wm.data.ISMemDataImpl">
+                    <value name="name">charsetName</value>
+                    <value name="value">UTF-8</value>
+                  </record>
+                </array>
+              </record>
+              <value name="charsetName">UTF-8</value>
+            </record>
+            <record name="valueCoder" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="type">STRING</value>
+              <value name="type_display">String</value>
+              <record name="parameters" javaclass="com.wm.data.ISMemDataImpl">
+                <array name="nameValue" type="record" depth="1">
+                  <record javaclass="com.wm.data.ISMemDataImpl">
+                    <value name="name">charsetName</value>
+                    <value name="value">UTF-8</value>
+                  </record>
+                </array>
+              </record>
+              <value name="charsetName">UTF-8</value>
+            </record>
+            <value name="aliasName">OrderAnalytics_orderAnalytics</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="name">OrderAnalytics_OrderAnalytics</value>
+        <value name="description">EEM</value>
+        <value name="package">OrderAnalytics</value>
+        <value name="type">Kafka</value>
+        <value name="host">https://eem-gw-ibm-egw-rt-1-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443</value>
+        <value name="clientId">ISf14c62efb7</value>
+        <value name="other_properties">security.protocol=SASL_SSL
+sasl.mechanism=PLAIN 
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="eem-c7e0537d-9779-4c61-894b-d389fc97e14b" password="[*****]" ;</value>
+        <value name="other_runtime_properties">security.protocol=SASL_SSL
+streaming.consumer.validate.consumers.not.greater.than.partitions=true
+sasl.mechanism=PLAIN 
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="eem-c7e0537d-9779-4c61-894b-d389fc97e14b" password="[*****]" ;
+streaming.client.publish.mode=asynchronous</value>
+        <value name="enabled">true</value>
+        <value name="securityProtocol">SASL_SSL</value>
+        <value name="truststoreAlias">EEMOpenShift</value>
         <value name="keystoreAlias"></value>
         <null name="keystoreKeyAlias"/>
         <array name="subjects" type="record" depth="1">
