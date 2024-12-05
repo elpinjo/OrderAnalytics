@@ -47,17 +47,27 @@ streaming.client.publish.mode=asynchronous</value>
               <value name="charsetName">UTF-8</value>
             </record>
             <record name="valueCoder" javaclass="com.wm.data.ISMemDataImpl">
-              <value name="type">STRING</value>
-              <value name="type_display">String</value>
+              <value name="type">JSON</value>
+              <value name="type_display">JSON</value>
               <record name="parameters" javaclass="com.wm.data.ISMemDataImpl">
                 <array name="nameValue" type="record" depth="1">
                   <record javaclass="com.wm.data.ISMemDataImpl">
                     <value name="name">charsetName</value>
                     <value name="value">UTF-8</value>
                   </record>
+                  <record javaclass="com.wm.data.ISMemDataImpl">
+                    <value name="name">documentTypeName</value>
+                    <value name="value">order.analytics.streaming.docs:OrderEvent</value>
+                  </record>
+                  <record javaclass="com.wm.data.ISMemDataImpl">
+                    <value name="name">schema</value>
+                    <null name="value"/>
+                  </record>
                 </array>
               </record>
+              <value name="documentTypeName">order.analytics.streaming.docs:OrderEvent</value>
               <value name="charsetName">UTF-8</value>
+              <null name="schema"/>
             </record>
             <value name="aliasName">OrderAnalytics_orderAnalytics</value>
           </record>
