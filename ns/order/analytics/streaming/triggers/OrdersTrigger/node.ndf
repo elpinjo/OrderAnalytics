@@ -65,13 +65,13 @@
     <record name="target" javaclass="com.wm.util.Values">
       <value name="type">INVOKE_SERVICE</value>
       <record name="parameters" javaclass="com.wm.util.Values">
+        <value name="serviceName">order.analytics.streaming.triggers.OrdersTrigger_:stream_target</value>
         <array name="nameValue" type="record" depth="1">
           <record javaclass="com.wm.util.Values">
             <value name="name">serviceName</value>
             <value name="value">order.analytics.streaming.triggers.OrdersTrigger_:stream_target</value>
           </record>
         </array>
-        <value name="serviceName">order.analytics.streaming.triggers.OrdersTrigger_:stream_target</value>
       </record>
     </record>
   </record>
