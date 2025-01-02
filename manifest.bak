@@ -7,30 +7,15 @@
   <null name="startup_services"/>
   <null name="shutdown_services"/>
   <null name="replication_services"/>
-  <null name="requires"/>
+  <record name="requires" javaclass="com.wm.util.Values">
+    <value name="WmStreaming">11.1</value>
+  </record>
   <value name="listACL">Default</value>
   <value name="webappLoad">yes</value>
   <value name="reloadWithDependentPackage">yes</value>
   <value name="build"></value>
   <value name="description">Order analytics provides the means to interact with IBM Event Automation for publishing and subscribing to events in relationship with Orders created or updated</value>
   <value name="created_date">05-11-2024 19:42:29 CET</value>
-  <array name="extendedProperties" type="record" depth="1">
-    <record javaclass="com.wm.util.Values">
-      <value name="key">displayName</value>
-      <value name="value">Order Analytics</value>
-    </record>
-    <record javaclass="com.wm.util.Values">
-      <value name="key">trusted</value>
-      <value name="value">no</value>
-    </record>
-    <record javaclass="com.wm.util.Values">
-      <value name="key">status</value>
-      <value name="value">Development</value>
-    </record>
-    <record javaclass="com.wm.util.Values">
-      <value name="key">tags</value>
-      <value name="value"></value>
-    </record>
-  </array>
+  <null name="extendedProperties"/>
   <null name="target_server_version"/>
 </Values>
