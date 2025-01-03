@@ -1090,6 +1090,9 @@
 
 <MAPDELETE FIELD="/totalAmount;1;0">
 </MAPDELETE>
+
+<MAPCOPY FROM="/salesOrder;4;0;order.analytics.docs:Order/orderId;1;0" TO="/value;4;0;order.analytics.streaming.docs:Order/orderId;1;0">
+</MAPCOPY>
 </MAP>
 
 <MAP TIMEOUT="" MODE="STANDALONE">
@@ -1186,11 +1189,11 @@
 <MAPCOPY FROM="/value;4;0;order.analytics.streaming.docs:Order" TO="/events;2;1/value;3;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/value;4;0;order.analytics.streaming.docs:Order/opportunityId;1;0" TO="/events;2;1/key;3;0">
-</MAPCOPY>
-
 <MAPDELETE FIELD="/value;4;0;order.analytics.streaming.docs:Order">
 </MAPDELETE>
+
+<MAPCOPY FROM="/value;4;0;order.analytics.streaming.docs:Order/orderId;1;0" TO="/events;2;1/key;3;0">
+</MAPCOPY>
 </MAP>
 
 <INVOKE TIMEOUT="" SERVICE="pub.streaming:send" VALIDATE-IN="$none" VALIDATE-OUT="$none">
