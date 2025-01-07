@@ -3,7 +3,7 @@
 <Values version="2.0">
   <value name="node_type">webMethods/trigger</value>
   <value name="node_subtype">unknown</value>
-  <value name="node_nsName">order.analytics.streaming.triggers:OrdersTrigger</value>
+  <value name="node_nsName">order.analytics.streaming.triggers:highValueCancellationTrigger</value>
   <value name="node_pkg">OrderAnalytics</value>
   <value name="node_comment"></value>
   <value name="is_public">false</value>
@@ -22,7 +22,7 @@
       <value name="stopExecution">false</value>
       <value name="onError">true</value>
     </record>
-    <value name="uniqueId">HLBPz2AK/YW4IBmHziJTC61f8Gc=</value>
+    <value name="uniqueId">rAsmXt0eOIHaUM1gJDw7b1MKUz0=</value>
     <value name="executeUser">Administrator</value>
     <value name="maxConsumers">1</value>
     <value name="minConsumers">1</value>
@@ -37,15 +37,15 @@
     <value name="pollingInterval">5000</value>
     <value name="pollingIntervalUnit">MILLISECONDS</value>
     <number name="pollingRequestSize" type="Integer">100</number>
-    <value name="aliasName">OrderAnalytics_orderAnalytics</value>
-    <Boolean name="enabled">false</Boolean>
+    <value name="aliasName">OrderAnalytics_highValueCancellationSubscription</value>
+    <Boolean name="enabled">true</Boolean>
     <value name="transientFailureAction">NONE</value>
     <value name="failureAction">NONE</value>
     <null name="resourceMonitorSvc"/>
     <array name="source" type="record" depth="1">
       <record javaclass="com.wm.util.Values">
         <value name="label">stream</value>
-        <value name="referenceId">Orders</value>
+        <value name="referenceId">highValueCancellation</value>
       </record>
     </array>
     <record name="window" javaclass="com.wm.util.Values">
@@ -57,6 +57,18 @@
       <record javaclass="com.wm.util.Values">
         <value name="processId">stream</value>
         <array name="intermediate" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="type">TRANSFORM</value>
+            <record name="parameters" javaclass="com.wm.util.Values">
+              <array name="nameValue" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="name">serviceName</value>
+                  <value name="value">order.analytics.streaming.triggers.highValueCancellationTrigger_:stream_transform</value>
+                </record>
+              </array>
+              <value name="serviceName">order.analytics.streaming.triggers.highValueCancellationTrigger_:stream_transform</value>
+            </record>
+          </record>
         </array>
         <array name="terminal" type="record" depth="1">
         </array>
@@ -65,13 +77,13 @@
     <record name="target" javaclass="com.wm.util.Values">
       <value name="type">INVOKE_SERVICE</value>
       <record name="parameters" javaclass="com.wm.util.Values">
-        <value name="serviceName">order.analytics.streaming.triggers.OrdersTrigger_:stream_target</value>
         <array name="nameValue" type="record" depth="1">
           <record javaclass="com.wm.util.Values">
             <value name="name">serviceName</value>
-            <value name="value">order.analytics.streaming.triggers.OrdersTrigger_:stream_target</value>
+            <value name="value">order.analytics.streaming.triggers.highValueCancellationTrigger_:stream_target</value>
           </record>
         </array>
+        <value name="serviceName">order.analytics.streaming.triggers.highValueCancellationTrigger_:stream_target</value>
       </record>
     </record>
   </record>
